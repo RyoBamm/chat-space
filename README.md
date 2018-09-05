@@ -4,6 +4,7 @@
 |------|----|-------|
 |name|string|index: true, null: false|
 |email|string|null: false, unique: true|
+|password|string|null: false|
 
 ### Association
 - has_many :groups, through: :members
@@ -47,6 +48,8 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+### Validation
 - validates :body, presence: true, if: -> { image.blank? }
 - validates :image, presence: true, if: -> { body.blank? }
 
