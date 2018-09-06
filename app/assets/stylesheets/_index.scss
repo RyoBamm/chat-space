@@ -30,5 +30,18 @@ $color-white: #FFFFFF;
         }
       }
     }
+    .group{
+      margin-top: 20px;
+      margin-bottom: 40px;
+      margin-left: 20px;
+      &__name{
+        font-size: 15px;
+        color: $color-white;
+      }
+      &__text{
+        font-size: 11px;
+        color: $color-white;
+      }
+    }
   }
 }
