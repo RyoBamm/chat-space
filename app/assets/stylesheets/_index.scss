@@ -1,5 +1,6 @@
 $color-white: #FFFFFF;
 $color-blue: #38AEF0;
+$message-color-darkgray: #434A54;
 
   .notice-of-group-created{
     color: $color-white;
@@ -20,9 +21,9 @@ $color-blue: #38AEF0;
       color: $color-white;
       background-color: #253141;
       h3{
+        font-weight: bold;
         margin-top: 35px;
         margin-left: 20px;
-        font-weight: bold;
         float: left;
       }
       &__icon{
@@ -89,16 +90,38 @@ $color-blue: #38AEF0;
         }
       }
     }
+
     .messages{
       height: calc(100vh - 100px);
       width: 100%;
       background-color: #FAFAFA;
+      position: relative;
+      .blank{
+        height: 6px;
+        width: 100%;
+      }
+      .message{
+        color: $message-color-darkgray;
+        margin-top: 40px;
+        margin-left: 40px;
+        .user_name{
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          float: left;
+        }
+        .posted_at{
+          font-size: 12px;
+          color: #999999;
+        }
+        .message_content{
+          font-size: 14px;
+          clear: both;
+        }
+      }
     }
+
+
   }
 }
-
-
-
-
-
-
