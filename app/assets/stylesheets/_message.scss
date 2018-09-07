@@ -34,9 +34,7 @@
     }
 
     .group{
-      margin-top: 20px;
-      margin-bottom: 40px;
-      margin-left: 20px;
+      margin: 20px 0 40px 20px;
       &__name{
         font-size: 15px;
         color: $color-white;
@@ -59,8 +57,7 @@
       width: 100%;
       border-bottom: 1px solid #eeeeee;
       &__left{
-        margin-top: 35px;
-        margin-left: 40px;
+        margin: 35px 0 0 40px;
         float: left;
         .group_name{
           font-size: 20px;
