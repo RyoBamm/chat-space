@@ -24,3 +24,13 @@
     .messages
       .blank
       = render 'message'
+      = render 'message'
+      = render 'message'
+    .footer
+      %form{action: "/", method: "post"}
+        %input.message_form{name: "title", placeholder: "type a message"}
+        .icon_wrapper
+          %label
+            %i.fa.fa-image
+            %input.hidden{type: "file", name: "datafile", id: "filesend"}
+        %input.send_button{type: "submit", value: "Send"}

@@ -2,13 +2,13 @@ $color-white: #FFFFFF;
 $color-blue: #38AEF0;
 $message-color-darkgray: #434A54;
 
+.wrapper{
+
   .notice-of-group-created{
     color: $color-white;
     background-color: $color-blue;
     text-align: center;
   }
-
-.wrapper{
 
   .sidebar{
     height: 100vh;
@@ -79,10 +79,8 @@ $message-color-darkgray: #434A54;
       .edit_button{
         height: 40px;
         color: $color-blue;
-        padding-right: 20px;
-        padding-left: 20px;
-        margin-top: 28px;
-        margin-right: 40px;
+        padding: 0 20px;
+        margin: 28px 40px 0 0;
         float: right;
         border: 1px solid $color-blue;
         p{
@@ -92,18 +90,13 @@ $message-color-darkgray: #434A54;
     }
 
     .messages{
-      height: calc(100vh - 100px);
-      width: 100%;
+      height: calc(100vh - 107px - 90px);
+      width: calc(100% - 40px);
       background-color: #FAFAFA;
-      position: relative;
-      .blank{
-        height: 6px;
-        width: 100%;
-      }
+      padding: 6px 0 0 40px;
       .message{
         color: $message-color-darkgray;
         margin-top: 40px;
-        margin-left: 40px;
         .user_name{
           font-size: 16px;
           font-weight: bold;
@@ -121,7 +114,39 @@ $message-color-darkgray: #434A54;
         }
       }
     }
-
-
+    .footer{
+      height: 50px;
+      width: cal(100%);
+      background-color: #DDDDDD;
+      padding: 20px 40px 20px 40px;
+      .message_form{
+        height: 50px;
+        width: calc(100% - 170px);
+        padding: 0 10px;
+        border: none;
+        float: left;
+      }
+      .icon_wrapper{
+        height: 50px;
+        background-color: $color-white;
+        float: left;
+        padding-right: 10px;
+        .hidden{
+          display: none;
+        }
+        i{
+          line-height: 50px;
+        }
+      }
+      .send_button{
+        height: 50px;
+        color: $color-white;
+        background-color: $color-blue;
+        padding:0 30px;
+        margin-left: 15px;
+        border: none;
+        float: right;
+      }
+    }
   }
 }
