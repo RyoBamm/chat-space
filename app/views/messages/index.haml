@@ -1,0 +1,38 @@
+/ pathにはmessages_pathを仮置き
+.wrapper
+
+  .notice-of-group-created
+    チャットグループが作成されました
+
+  .sidebar
+    .header
+      %h3 tempo
+      .header__icon
+        = link_to messages_path do
+          %i.fa.fa-edit
+        = link_to messages_path do
+          %i.fa.fa-cog
+    = render 'group'
+
+  .groupchat
+    .header
+      .header__left
+        .group_name sample
+        .member Member：tempo rary
+      = link_to messages_path do
+        .header__edit_button
+          %p Edit
+    .messages
+      = render 'message'
+      = render 'message'
+      = render 'message'
+    .footer
+      %form{action: "/", method: "post", enctype: "multipart/form-data"}
+        %input{name: "utf8", type: "hidden", value:"✓"}
+        %input{type:"hidden", name:"authenticity_token", value:""}
+        %input.footer__message_form{type: "text", name: "body", placeholder: "type a message"}
+        .footer__icon_wrapper
+          %label{for: "filesend"}
+            %i.fa.fa-image
+            %input.hidden{type: "file", name: "image", id: "filesend"}
+        %input.footer__send_button{type: "submit", value: "Send"}

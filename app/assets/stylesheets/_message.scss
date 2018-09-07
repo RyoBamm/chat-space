@@ -1,0 +1,145 @@
+.wrapper{
+
+  .notice-of-group-created{
+    color: $color-white;
+    background-color: $color-blue;
+    text-align: center;
+  }
+
+  .sidebar{
+    height: 100vh;
+    width: 300px;
+    background-color: #2f3e51;
+    float: left;
+
+    .header{
+      height: 100px;
+      color: $color-white;
+      background-color: #253141;
+      h3{
+        font-weight: bold;
+        margin-top: 35px;
+        margin-left: 20px;
+        float: left;
+      }
+      &__icon{
+        margin-top: 35px;
+        margin-right: 20px;
+        float: right;
+        i,a{
+          color: $color-white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .group{
+      margin: 20px 0 40px 20px;
+      &__name{
+        font-size: 15px;
+        color: $color-white;
+      }
+      &__text{
+        font-size: 11px;
+        color: $color-white;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .groupchat{
+    height: 100%;
+    width: calc(100% - 300px);
+    float: right;
+
+    .header{
+      height: 100px;
+      width: 100%;
+      border-bottom: 1px solid #eeeeee;
+      &__left{
+        margin: 35px 0 0 40px;
+        float: left;
+        .group_name{
+          font-size: 20px;
+          color: #333333;
+        }
+        .member{
+          font-size: 12px;
+          color: #999999;
+          margin-top: 15px;
+        }
+      }
+      &__edit_button{
+        height: 40px;
+        color: $color-blue;
+        padding: 0 20px;
+        margin: 28px 40px 0 0;
+        float: right;
+        border: 1px solid $color-blue;
+        p{
+          line-height: 40px;
+        }
+      }
+    }
+
+    .messages{
+      height: calc(100vh - 107px - 90px);
+      width: calc(100% - 40px);
+      background-color: #FAFAFA;
+      padding: 6px 0 0 40px;
+      .message{
+        color: $message-color-darkgray;
+        margin-top: 40px;
+        &__user_name{
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          float: left;
+        }
+        &__posted_at{
+          font-size: 12px;
+          color: #999999;
+        }
+        &__message_content{
+          font-size: 14px;
+          clear: both;
+        }
+      }
+    }
+    .footer{
+      height: 50px;
+      width: cal(100%);
+      background-color: #DDDDDD;
+      padding: 20px 40px 20px 40px;
+      &__message_form{
+        height: 50px;
+        width: calc(100% - 170px);
+        padding: 0 10px;
+        border: none;
+        float: left;
+      }
+      &__icon_wrapper{
+        height: 50px;
+        background-color: $color-white;
+        float: left;
+        padding-right: 10px;
+        .hidden{
+          display: none;
+        }
+        i{
+          line-height: 50px;
+        }
+      }
+      &__send_button{
+        height: 50px;
+        color: $color-white;
+        background-color: $color-blue;
+        padding:0 30px;
+        margin-left: 15px;
+        border: none;
+        float: right;
+      }
+    }
+  }
+}
