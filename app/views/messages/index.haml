@@ -1,3 +1,4 @@
+/ pathにはnew_message_pathを仮置き
 .wrapper
 
   .notice-of-group-created
@@ -27,10 +28,12 @@
       = render 'message'
       = render 'message'
     .footer
-      %form{action: "/", method: "post"}
-        %input.message_form{name: "title", placeholder: "type a message"}
+      %form{action: "/", method: "post", enctype: "multipart/form-data"}
+        %input{name: "utf8", type: "hidden", value:"✓"}
+        %input{type:"hidden", name:"authenticity_token", value:""}
+        %input.message_form{type: "text", name: "body", placeholder: "type a message"}
         .icon_wrapper
-          %label
+          %label{for: "filesend"}
             %i.fa.fa-image
-            %input.hidden{type: "file", name: "datafile", id: "filesend"}
+            %input.hidden{type: "file", name: "image", id: "filesend"}
         %input.send_button{type: "submit", value: "Send"}
