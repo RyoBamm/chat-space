@@ -16,6 +16,7 @@
       height: 100px;
       color: $color-white;
       background-color: #253141;
+      margin-bottom: 20px;
       h3{
         font-weight: bold;
         margin-top: 35px;
@@ -33,16 +34,19 @@
       }
     }
 
-    .group{
-      margin: 20px 0 40px 20px;
-      &__name{
-        font-size: 15px;
-        color: $color-white;
-      }
-      &__text{
-        font-size: 11px;
-        color: $color-white;
-        margin-top: 5px;
+    .groups{
+      margin: 20px 0 0 0;
+      .group{
+        margin: 0 0 40px 20px;
+        &__name{
+          font-size: 15px;
+          color: $color-white;
+        }
+        &__text{
+          font-size: 11px;
+          color: $color-white;
+          margin: 5px 0 0 0;
+        }
       }
     }
   }
