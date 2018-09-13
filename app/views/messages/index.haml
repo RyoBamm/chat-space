@@ -6,11 +6,12 @@
 
   .sidebar
     .header
-      %h3 tempo
+      %h3
+        = current_user.name
       .header__icon
         = link_to messages_path do
           %i.fa.fa-edit
-        = link_to messages_path do
+        = link_to edit_user_path(current_user) do
           %i.fa.fa-cog
     = render 'group'
 
