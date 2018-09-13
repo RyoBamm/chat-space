@@ -4,23 +4,14 @@
   / .notice-of-group-created
   /   チャットグループが作成されました
 
-  .sidebar
-    .header
-      %h3
-        = current_user.name
-      .header__icon
-        = link_to messages_path do
-          %i.fa.fa-edit
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
-    = render 'group'
+  = render 'shared/side_bar'
 
   .groupchat
     .header
       .header__left
         .group_name sample
         .member Member：tempo rary
-      = link_to messages_path do
+      = link_to group_messages_path do
         .header__edit_button
           %p Edit
     .messages
