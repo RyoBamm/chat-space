@@ -9,22 +9,22 @@
   .groupchat
     .header
       .header__left
-        .group_name sample
-        .member Member：tempo rary
-      = link_to group_messages_path do
+        .group_name
+          = @group.name
+        .member
+          Member：
+          - @group.users.each do |user|
+            = user.name
+      = link_to "/groups/#{@group.id}/edit" do
         .header__edit_button
           %p Edit
     .messages
-      = render 'message'
-      = render 'message'
-      = render 'message'
+      = render partial: 'message', collection: @messages
     .footer
-      %form{action: "/", method: "post", enctype: "multipart/form-data"}
-        %input{name: "utf8", type: "hidden", value:"✓"}
-        %input{type:"hidden", name:"authenticity_token", value:""}
-        %input.footer__message_form{type: "text", name: "body", placeholder: "type a message"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'footer__message_form', placeholder: 'type a message'
         .footer__icon_wrapper
-          %label{for: "filesend"}
-            %i.fa.fa-image
-            %input.hidden{type: "file", name: "image", id: "filesend"}
-        %input.footer__send_button{type: "submit", value: "Send"}
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'fa fa-image'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'footer__send_button'

@@ -1,4 +1,9 @@
 .message
-  .message__user_name tempo
-  .message__posted_at 2018/09/06 02:44
-  .message__message_content How are you today?
+  .message__user_name
+    = message.user.name
+  .message__posted_at
+    = format_posted_time(message.created_at)
+  - if message.content.present?
+    .message__message_content
+      = message.content
+  = image_tag message.image.url, class: 'message__message_image' if message.image.present?
