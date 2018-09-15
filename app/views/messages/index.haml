@@ -21,7 +21,7 @@
     .messages
       = render partial: 'message', collection: @messages
     .footer
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: {id: 'message_form'} do |f|
         = f.text_field :content, class: 'footer__message_form', placeholder: 'type a message'
         .footer__icon_wrapper
           = f.label :image, class: 'form__mask__image' do
