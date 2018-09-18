@@ -38,7 +38,10 @@ $(function() {
       $('.footer__message_form').val('')
       $('.hidden').val('')
       $('.footer__send_button').prop('disabled', false);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+    })
+    .fail(function(){
+      alert('エラーが発生しました');
     })
   });
 
