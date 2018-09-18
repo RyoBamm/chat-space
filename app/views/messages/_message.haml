@@ -1,8 +1,9 @@
 .message
-  .message__user_name
-    = message.user.name
-  .message__posted_at
-    = format_posted_time(message.created_at)
+  .message__top
+    .message__top__user_name
+      = message.user.name
+    .message__top__posted_at
+      = format_posted_time(message.created_at)
   - if message.content.present?
     .message__message_content
       = message.content

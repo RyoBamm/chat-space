@@ -9,9 +9,10 @@ class MessagesController < ApplicationController
   def create
     if @message = @group.messages.create(message_params)
       respond_to do |format|
-        format.html {group_messages_path(@group)}
+        format.html {
+          redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+        }
         format.json
-        # , notice: 'メッセージが送信されました'
       end
     else
       @messages = @group.messages.includes(:user)
