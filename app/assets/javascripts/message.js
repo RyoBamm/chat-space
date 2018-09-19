@@ -2,11 +2,11 @@ $(function() {
 $(document).on('turbolinks:load', function() {
   // HTML文の作成
   function buildHTML(message){
-    var image  = message.image_url ? `<img class = "message__message_image" src = ${ message.image_url }>`: "";
-    var html = `<div class = "message">
+    var image  = message.image ? `<img class = "message__message_image" src = ${ message.image }>`: "";
+    var html = `<div class = "message" data-message-id="${message.id}">
                   <div class = "message__top">
                     <div class = "message__top__user_name">
-                      ${message.user_name}
+                      ${message.name}
                     </div>
                     <div class = "message__top__posted_at">
                       ${message.date}
@@ -14,8 +14,8 @@ $(document).on('turbolinks:load', function() {
                   </div>
                   <div class = "message__message_content">
                     ${message.content}
-                    ${image}
                   </div>
+                  ${image}
                 </div>`
     return html;
   }
@@ -53,15 +53,17 @@ $(document).on('turbolinks:load', function() {
           dataType: 'json',
         })
         .done(function(data) {
-          var id = $('.message').data('messageId');
+          var id = $('.message:last').data('message-id');
           var insertHTML = '';
           data.messages.forEach(function(message) {
             if (message.id > id ) {
               insertHTML += buildHTML(message);
             }
           });
-          $('.messages').prepend(insertHTML);
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+          $('.messages').append(insertHTML);
+          if (insertHTML){
+            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 1000, 'swing');
+          }
         })
         .fail(function(data) {
           alert('自動更新に失敗しました');
