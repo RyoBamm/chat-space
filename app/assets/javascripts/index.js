@@ -29,9 +29,10 @@ function add_user(user_id,user_name){
 
   $('#user-search-field').on("keyup", function() {
     var input = $('#user-search-field').val();
+    console.log(input);
     $.ajax({
       type: 'GET',
-      url: 'users/',
+      url: '/users',
       data: { keyword: input },
       dataType: 'json'
     })
